@@ -203,3 +203,11 @@ python manage.py createsuperuser
 - No subir .env, venv/ ni la base de datos.
 - Para actualizar dependencias:
 - pip freeze > requirements.txt
+
+#Intreganges. 
+- José Gaona
+- Erica Bordon
+- Anahi Benitez
+- Leonardo Diaz
+- Cristhian Douglas
+- Elvis Riquelme
