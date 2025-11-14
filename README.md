@@ -160,42 +160,46 @@ devuelto (bool)
 # 🔐 Permisos y Roles
 Acción	                        Usuario normal	   Staff/Admin
 Ver libros	                        ✔	               ✔
+
 Ver autores	                        ✔	               ✔
+
 Crear/Editar/Eliminar autores	      ❌	              ✔
+
 Crear/Editar/Eliminar libros	      ❌	              ✔
+
 Tomar préstamo	                     ✔	               ✔
+
 Ver mis préstamos	                  ✔	               ❌
+
 Ver todos los préstamos	            ❌	               ✔
 # 📡 API REST – Endpoints
-Autores
-Método	Endpoint	Función
-GET	/api/autores/	Lista autores
-POST	/api/autores/	Crear autor
-GET	/api/autores/{id}/	Detalle autor
-PUT/PATCH	/api/autores/{id}/	Editar autor
-DELETE	/api/autores/{id}/	Eliminar autor
-Libros
-Método	Endpoint	Función
-GET	/api/libros/	Lista libros
-POST	/api/libros/	Crear libro
-GET	/api/libros/{id}/	Detalle libro
-PUT/PATCH	/api/libros/{id}/	Editar libro
-DELETE	/api/libros/{id}/	Eliminar libro
+- Autores
+- Método	Endpoint	Función
+- GET	/api/autores/	Lista autores
+- POST	/api/autores/	Crear autor
+- GET	/api/autores/{id}/	Detalle autor
+- PUT/PATCH	/api/autores/{id}/	Editar autor
+- DELETE	/api/autores/{id}/	Eliminar autor
+- Libros
+- Método	Endpoint	Función
+- GET	/api/libros/	Lista libros
+- POST	/api/libros/	Crear libro
+- GET	/api/libros/{id}/	Detalle libro
+- PUT/PATCH	/api/libros/{id}/	Editar libro
+- DELETE	/api/libros/{id}/	Eliminar libro
 # 👤 Usuarios de prueba
 
-Crear administrador:
+- Crear administrador:
 
 python manage.py createsuperuser
 
 
-Registro de usuario normal:
+- Registro de usuario normal:
 
 /register/
 
 # 📌 Notas importantes
 
-No subir .env, venv/ ni la base de datos.
-
-Para actualizar dependencias:
-
-pip freeze > requirements.txt
+- No subir .env, venv/ ni la base de datos.
+- Para actualizar dependencias:
+- pip freeze > requirements.txt
