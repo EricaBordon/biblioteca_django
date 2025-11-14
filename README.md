@@ -1,64 +1,201 @@
-# Biblioteca – Proyecto Django + DRF
+# 📘 Biblioteca – Proyecto Django + DRF
 
-Proyecto educativo que cumple la rúbrica: modelos relacionados, CRUD, autenticación, permisos, admin, templates responsive y API REST.
+Proyecto web completo desarrollado con Django, Django REST Framework y Bootstrap 5, siguiendo los criterios de la rúbrica académica:
+modelos relacionados, CRUD completo, autenticación, permisos, vistas responsivas, carga de imágenes y API REST funcional.
 
-## Requisitos
-- Python 3.10+
-- Git (opcional para versionado)
+# 🚀 Características principales del sistema
+# 📚 Gestión de Biblioteca
 
-## Instalación (Windows / VS Code)
-1. Abrir esta carpeta en VS Code.
-2. Abrir terminal (Terminal > New Terminal) y crear entorno:
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate
-   ```
-3. Instalar dependencias:
-   ```bash
-   python -m pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-4. Crear archivo `.env` (copiar de `.env.example`) y definir SECRET_KEY y DEBUG.
-5. Aplicar migraciones y crear superusuario:
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   python manage.py createsuperuser
-   ```
-6. Ejecutar servidor:
-   ```bash
-   python manage.py runserver
-   ```
+- Catálogo completo de libros con portada (ImageField)
 
-## Funcionalidad
-- Modelos: Autor, Categoria, Libro, Prestamo (relaciones FK y M2M) + Usuario (Django)
-- CRUD de Autores y Libros (solo staff crea/edita/borra)
-- Préstamos: tomar/devolver y manejo de stock
-- Autenticación: login, logout, registro
-- Permisos: usuarios ven; staff administra
-- Admin personalizado
-- Templates con Bootstrap 5, responsive, herencia base
-- API REST: /api/libros/ y /api/autores/ con búsqueda
+- Autores con biografía
 
-## Endpoints API
-- GET/POST: /api/autores/
-- GET/PUT/PATCH/DELETE: /api/autores/{id}/
-- GET/POST: /api/libros/
-- GET/PUT/PATCH/DELETE: /api/libros/{id}/
-- Auth por sesión o Token (instalar y crear token si deseas)
+- Categorías (M2M)
 
-## Usuarios de prueba
-- Crea un superusuario con `createsuperuser` para administrar.
-- Regístrate desde /register/ para usuario normal.
+- Stock dinámico
 
-## Estructura
-- App: catalogo (modelos, vistas, urls, api, serializers, forms)
-- Templates: auth, autores, libros, prestamos
-- Static: css/styles.css
+# 👥 Usuarios
 
-## Notas
-- No subas `.env` ni `venv/` al repo.
-- Para requirements actualizados: `pip freeze > requirements.txt`.
+Registro, login y logout
 
-## Licencia
-Uso educativo.
+Diferencias claras:
+
+Usuario normal: puede prestar libros y ver su historial
+
+Administrador (staff): CRUD completo + historial global de préstamos
+
+# 📅 Préstamos
+
+Tomar préstamo (solo si hay stock)
+
+Devolver préstamo
+
+Vista Mis préstamos (usuario normal)
+
+Vista Préstamos (Admin) con listado global
+
+# 🖼 Frontend
+
+Bootstrap 5
+
+Templates responsivos
+
+Imagen completa en portada (cover)
+
+Cards modernas para libros
+
+# 🔌 API REST (DRF)
+
+Endpoints de Autores y Libros
+
+CRUD completo
+
+Paginación
+
+Búsqueda por título, autor y categoría
+
+# 🔧 Requisitos
+
+Python 3.10+
+
+Pip actualizado
+
+Git (opcional)
+
+Django 4.x
+
+Django REST Framework
+
+Pillow (para imágenes)
+
+# 🛠 Instalación (Windows / VS Code)
+
+- Abrir el proyecto en VS Code.
+
+- Crear entorno virtual:
+
+python -m venv venv
+venv\Scripts\activate
+
+
+- Instalar dependencias:
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+
+- Crear archivo .env (copiar de .env.example):
+
+SECRET_KEY=tu_clave_unica
+DEBUG=True
+
+
+- Aplicar migraciones:
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+- Crear superusuario:
+
+python manage.py createsuperuser
+
+
+- Ejecutar servidor:
+
+python manage.py runserver
+
+# 📁 Estructura del proyecto
+biblioteca_project/
+catalogo/
+    ├── api.py
+    ├── forms.py
+    ├── models.py
+    ├── serializers.py
+    ├── urls.py
+    ├── views.py
+static/
+templates/
+    ├── auth/
+    ├── autores/
+    ├── libros/
+    ├── prestamos/
+manage.py
+requirements.txt
+.env.example
+
+# 🧩 Modelos incluidos
+Autor
+
+nombre
+
+bio (opcional)
+
+Categoría
+
+nombre
+
+Libro
+
+título
+
+autor (FK)
+
+categorías (M2M)
+
+stock
+
+imagen (portada)
+
+Préstamo
+
+usuario
+
+libro
+
+fecha_prestamo
+
+devuelto (bool)
+
+# 🔐 Permisos y Roles
+Acción	                        Usuario normal	   Staff/Admin
+Ver libros	                        ✔	               ✔
+Ver autores	                        ✔	               ✔
+Crear/Editar/Eliminar autores	      ❌	              ✔
+Crear/Editar/Eliminar libros	      ❌	              ✔
+Tomar préstamo	                     ✔	               ✔
+Ver mis préstamos	                  ✔	               ❌
+Ver todos los préstamos	            ❌	               ✔
+# 📡 API REST – Endpoints
+Autores
+Método	Endpoint	Función
+GET	/api/autores/	Lista autores
+POST	/api/autores/	Crear autor
+GET	/api/autores/{id}/	Detalle autor
+PUT/PATCH	/api/autores/{id}/	Editar autor
+DELETE	/api/autores/{id}/	Eliminar autor
+Libros
+Método	Endpoint	Función
+GET	/api/libros/	Lista libros
+POST	/api/libros/	Crear libro
+GET	/api/libros/{id}/	Detalle libro
+PUT/PATCH	/api/libros/{id}/	Editar libro
+DELETE	/api/libros/{id}/	Eliminar libro
+# 👤 Usuarios de prueba
+
+Crear administrador:
+
+python manage.py createsuperuser
+
+
+Registro de usuario normal:
+
+/register/
+
+# 📌 Notas importantes
+
+No subir .env, venv/ ni la base de datos.
+
+Para actualizar dependencias:
+
+pip freeze > requirements.txt
