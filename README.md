@@ -172,7 +172,7 @@ Tomar préstamo	                     ✔	               ✔
 Ver mis préstamos	                  ✔	               ❌
 
 Ver todos los préstamos	            ❌	               ✔
-# 📡 API REST – Endpoints
+#  API REST – Endpoints
 - Autores
 - Método	Endpoint	Función
 - GET	/api/autores/	Lista autores
