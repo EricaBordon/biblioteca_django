@@ -1,10 +1,10 @@
-# 📘 Biblioteca – Proyecto Django + DRF
+#  Biblioteca – Proyecto Django + DRF
 
 Proyecto web completo desarrollado con Django, Django REST Framework y Bootstrap 5, siguiendo los criterios de la rúbrica académica:
 modelos relacionados, CRUD completo, autenticación, permisos, vistas responsivas, carga de imágenes y API REST funcional.
 
-# 🚀 Características principales del sistema
-# 📚 Gestión de Biblioteca
+#  Características principales del sistema
+#  Gestión de Biblioteca
 
 - Catálogo completo de libros con portada (ImageField)
 
@@ -14,61 +14,61 @@ modelos relacionados, CRUD completo, autenticación, permisos, vistas responsiva
 
 - Stock dinámico
 
-# 👥 Usuarios
+#  Usuarios
 
-Registro, login y logout
+- Registro, login y logout
 
-Diferencias claras:
+- Diferencias claras:
 
-Usuario normal: puede prestar libros y ver su historial
+- Usuario normal: puede prestar libros y ver su historial
 
-Administrador (staff): CRUD completo + historial global de préstamos
+- Administrador (staff): CRUD completo + historial global de préstamos
 
-# 📅 Préstamos
+#  Préstamos
 
-Tomar préstamo (solo si hay stock)
+- Tomar préstamo (solo si hay stock)
 
-Devolver préstamo
+- Devolver préstamo
 
-Vista Mis préstamos (usuario normal)
+- Vista Mis préstamos (usuario normal)
 
-Vista Préstamos (Admin) con listado global
+- Vista Préstamos (Admin) con listado global
 
-# 🖼 Frontend
+#  Frontend
 
-Bootstrap 5
+- Bootstrap 5
 
-Templates responsivos
+- Templates responsivos
 
-Imagen completa en portada (cover)
+- Imagen completa en portada (cover)
 
-Cards modernas para libros
+- Cards modernas para libros
 
-# 🔌 API REST (DRF)
+#  API REST (DRF)
 
-Endpoints de Autores y Libros
+- Endpoints de Autores y Libros
 
-CRUD completo
+- CRUD completo
 
-Paginación
+- Paginación
 
-Búsqueda por título, autor y categoría
+- Búsqueda por título, autor y categoría
 
-# 🔧 Requisitos
+#  Requisitos
 
-Python 3.10+
+- Python 3.10+
 
-Pip actualizado
+- Pip actualizado
 
-Git (opcional)
+- Git (opcional)
 
-Django 4.x
+- Django 4.x
 
-Django REST Framework
+- Django REST Framework
 
-Pillow (para imágenes)
+- Pillow (para imágenes)
 
-# 🛠 Instalación (Windows / VS Code)
+#  Instalación (Windows / VS Code)
 
 - Abrir el proyecto en VS Code.
 
@@ -105,7 +105,7 @@ python manage.py createsuperuser
 
 python manage.py runserver
 
-# 📁 Estructura del proyecto
+#  Estructura del proyecto
 biblioteca_project/
 catalogo/
     ├── api.py
@@ -124,40 +124,40 @@ manage.py
 requirements.txt
 .env.example
 
-# 🧩 Modelos incluidos
-Autor
+#  Modelos incluidos
+- Autor
 
-nombre
+- nombre
 
-bio (opcional)
+- bio (opcional)
 
-Categoría
+- Categoría
 
-nombre
+- nombre
 
-Libro
+- Libro
 
-título
+- título
 
-autor (FK)
+- autor (FK)
 
-categorías (M2M)
+- categorías (M2M)
 
-stock
+- stock
 
-imagen (portada)
+- imagen (portada)
 
-Préstamo
+- Préstamo
 
-usuario
+- usuario
 
-libro
+- libro
 
-fecha_prestamo
+- fecha_prestamo
 
-devuelto (bool)
+- devuelto (bool)
 
-# 🔐 Permisos y Roles
+#  Permisos y Roles
 Acción	                        Usuario normal	   Staff/Admin
 Ver libros	                        ✔	               ✔
 
@@ -187,7 +187,7 @@ Ver todos los préstamos	            ❌	               ✔
 - GET	/api/libros/{id}/	Detalle libro
 - PUT/PATCH	/api/libros/{id}/	Editar libro
 - DELETE	/api/libros/{id}/	Eliminar libro
-# 👤 Usuarios de prueba
+#  Usuarios de prueba
 
 - Crear administrador:
 
@@ -198,7 +198,7 @@ python manage.py createsuperuser
 
 /register/
 
-# 📌 Notas importantes
+#  Notas importantes
 
 - No subir .env, venv/ ni la base de datos.
 - Para actualizar dependencias:
