@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load form_filters %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+        <div class="card shadow-sm border-0 rounded-3">
+            <div class="card-body p-4">
+
+                <h2 class="mb-4 text-center fw-bold">
+                    {% if form.instance.pk %}
+                        Editar libro
+                    {% else %}
+                        Nuevo libro
+                    {% endif %}
+                </h2>
+
+                <form method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">{{ field.label }}</label>
+
+                            {# CAMPOS DE TEXTO #}
+                            {% if field|widget_name == "TextInput" %}
+                                {{ field|add_class:"form-control" }}
+
+                            {# NUMÉRICOS #}
+                            {% elif field|widget_name == "NumberInput" %}
+                                {{ field|add_class:"form-control" }}
+
+                            {# FECHA #}
+                            {% elif field|widget_name == "DateInput" %}
+                                {{ field|add_class:"form-control" }}
+
+                            {# SELECT SIMPLE #}
+                            {% elif field|widget_name == "Select" %}
+                                {{ field|add_class:"form-select" }}
+
+                            {# SELECT MULTIPLE #}
+                            {% elif field|widget_name == "SelectMultiple" %}
+                                {{ field|add_class:"form-select" }}
+
+                            {# INPUT FILE (IMAGEN) #}
+                            {% elif field|widget_name == "ClearableFileInput" %}
+                                {{ field|add_class:"form-control" }}
+
+                                {# Imagen actual (si existe) #}
+                                {% if form.instance.imagen %}
+                                    <p class="mt-2 mb-1 fw-semibold">Imagen actual:</p>
+                                    <img src="{{ form.instance.imagen.url }}" 
+                                         class="rounded mb-3"
+                                         style="width: 150px; height: 200px; object-fit: cover;">
+                                {% endif %}
+
+                                {# Previsualización de nueva imagen #}
+                                <img id="preview" class="mt-2 d-none rounded"
+                                     style="width: 150px; height: 200px; object-fit: cover;">
+
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+
+                            {% if field.help_text %}
+                                <small class="text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+
+                            {% for error in field.errors %}
+                                <div class="text-danger small">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="submit" class="btn btn-primary w-50">Guardar</button>
+                        <a href="/libros/" class="btn btn-outline-secondary w-50">Cancelar</a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Script: previsualizar nueva imagen -->
+<script>
+    const fileInput = document.querySelector('input[type="file"]');
+    const preview = document.getElementById('preview');
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.classList.remove('d-none');
+            }
+        });
+    }
+</script>
+
+{% endblock %}

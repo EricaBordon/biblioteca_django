@@ -1,0 +1,148 @@
+/* Fuente general */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    color: #333;
+    padding-bottom: 40px;
+}
+
+/* Navbar profesional */
+.navbar {
+    background: #1f2937 !important; /* gris petróleo */
+    padding: 14px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #ffffff !important;
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+}
+
+.nav-link {
+    color: #d1d5db !important;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* Contenedores */
+.container {
+    max-width: 1100px;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Cards estilo empresa */
+.card {
+    border: none;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: rgba(100, 100, 111, 0.18) 0px 4px 20px 2px;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #4f46e5; /* Indigo moderno */
+    border-color: #4f46e5;
+    padding: 8px 18px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+/* Botones outline */
+.btn-outline-primary {
+    border-color: #4f46e5;
+    color: #4f46e5;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4f46e5;
+    color: #ffffff;
+}
+
+/* Formularios */
+form input,
+form select,
+form textarea {
+    border-radius: 8px !important;
+    border: 1px solid #d1d5db !important;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #4f46e5 !important;
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25) !important;
+}
+
+/* Mensajes */
+.alert {
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* FORMULARIO CENTRADO */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: rgba(100, 100, 111, 0.18) 0px 8px 24px;
+}
+
+/* TITULO LOGIN */
+.card h2 {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* CAMPOS GRANDES */
+form .form-control-lg {
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+/* BOTÓN LOGIN */
+.btn-primary {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+/* BOTÓN HOVER */
+.btn-primary:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+/* LINK REGISTRO */
+.card a {
+    color: #4f46e5;
+    font-weight: 500;
+}
+
+textarea.form-control {
+    min-height: 180px;
+    resize: vertical;
+}

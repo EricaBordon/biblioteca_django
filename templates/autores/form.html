@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load form_filters %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-0 rounded-3">
+            <div class="card-body p-4">
+                
+                <h2 class="mb-4 text-center fw-bold">
+                    {% if form.instance.pk %}
+                        Editar autor
+                    {% else %}
+                        Nuevo autor
+                    {% endif %}
+                </h2>
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">{{ field.label }}</label>
+                            {{ field|add_class:"form-control" }}
+
+                            {% if field.help_text %}
+                                <small class="text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                            
+                            {% for error in field.errors %}
+                                <div class="text-danger small">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="submit" class="btn btn-primary w-50">Guardar</button>
+                        <a href="/autores/" class="btn btn-outline-secondary w-50">Cancelar</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
