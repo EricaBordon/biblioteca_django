@@ -4,12 +4,14 @@ body {
     background: #f3f4f6;
     color: #333;
     padding-bottom: 40px;
+    
 }
 
 /* Navbar profesional */
 .navbar {
     background: #1f2937 !important; /* gris petróleo */
     padding: 14px 0;
+    
 }
 
 .navbar-brand {
@@ -17,22 +19,26 @@ body {
     color: #ffffff !important;
     letter-spacing: 0.5px;
     font-size: 1.2rem;
+    
 }
 
 .nav-link {
     color: #d1d5db !important;
     font-weight: 500;
     transition: 0.2s ease;
+    
 }
 
 .nav-link:hover {
     color: #ffffff !important;
     transform: translateY(-1px);
+    
 }
 
 /* Contenedores */
 .container {
     max-width: 1100px;
+    
 }
 
 /* Títulos */
@@ -65,8 +71,8 @@ h1, h2, h3 {
 }
 
 .btn-primary:hover {
-    background-color: #4338ca;
-    border-color: #4338ca;
+    background-color: #3329b3;
+    border-color: #3329b3;
 }
 
 /* Botones outline */
@@ -132,8 +138,8 @@ form .form-control-lg {
 
 /* BOTÓN HOVER */
 .btn-primary:hover {
-    background-color: #4338ca;
-    border-color: #4338ca;
+    background-color: #3329b3;
+    border-color: #3329b3;
 }
 
 /* LINK REGISTRO */
